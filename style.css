@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700;900&display=swap');
+
+:root{
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*16px = 1.6rem*/
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font: size 1.5rem;
+    font-family: 'League Spartan', sans-serif;
+}
+.radius{
+    border-radius: 10px;
+}
+p{
+    font-size: 1.8rem;
+    line-height: 1.8em;
+}
+.container{
+    background-color: hsl(0, 0%, 100%);
+    position: relative;
+    text-align: center;
+    margin: 2em;
+    color: var(--Very-Dark-Magenta);
+}
+/*.container::before{
+    position: absolute;
+    content: "";
+    background-image: url(images/bg-pattern-top-mobile.svg);
+    width: 50%;
+    aspect-ratio: 1;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+.container::after{
+    position: absolute;
+    content: "";
+    background-image: url(images/bg-pattern-bottom-mobile.svg);
+    width: 50%;
+    aspect-ratio: 1;
+    bottom: 0%;
+    right: 0%;
+    background-repeat: no-repeat;
+}*/
+header{
+    padding-bottom: 1.6em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.badge{
+    width: 100%;
+    max-width: 400px;
+}
+h1.main-title{
+    font-size: 3.2rem;
+    font-weight: 700;
+    padding: 1em;
+}
+
+.review{
+    margin: 1em 0;
+    grid-area: review;
+    width: 100%;
+    max-width: 750px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+.review .rate:last-child{
+    justify-self: end;
+}
+.review .rate:nth-child(2){
+    justify-self: center;
+}
+.rate{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--Light-Grayish-Magenta);
+    padding: 1em;
+    color: var(--Very-Dark-Magenta);
+    max-width: 500px;
+    
+}
+.rate + .rate{
+    margin-top: 1em;
+}
+.rate p:first-of-type{
+    margin-top: 1em;
+    font-weight: 700;
+}
+.star{
+    display: inline-block;
+}
+.star + .star{
+    margin-left: .5rem;
+}
+
+main{
+    width: 100%;
+}
+
+.feedback{
+    width: 100%;
+    height: 30rem;
+    margin: 1em 0;
+    color: var(--Light-Grayish-Magenta);
+    text-align: start;
+}
+.customer{
+    background-color: var(--Very-Dark-Magenta);
+    padding: 1em;
+}
+.customer + .customer{
+    margin-top: 1em;
+}
+
+.customer .image{
+    width: 30%;
+    margin: 0 1em;
+}
+
+.customer img{
+    width: 100%;
+    border-radius: 50%;
+}
+.person{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+}
+.tag{
+    width: 60%;
+    margin: 2em 0;
+}
+.name{
+    margin-bottom: .25em;
+}
+.title{
+    color: var(--Soft-Pink);
+}
+
+.feed{
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+}
+
+
+@media(min-width: 1200px){
+    .feedback{
+        display: grid;
+        grid-template-columns: repeat(3, calc((100% - 6em) / 3));
+        justify-content: space-between;
+        margin: 1em;
+    }
+    main{
+        width: 90%;
+        margin: 3em 50%;
+        margin-left: 5.5%;
+    }
+    .rate{
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        align-items: baseline;
+    }
+    .customer{
+        width: 44rem;
+        height: 24rem
+    }
+    .feedback .customer:first-child{
+        align-self: flex-start;
+    }
+    .feedback .customer:last-child{
+        align-self: flex-end;
+    }
+    .feedback .customer:nth-child(2){
+        align-self: center;
+    }
+}
