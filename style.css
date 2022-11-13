@@ -238,12 +238,17 @@ h1.title{
         margin: 1em 0 0;
     }
     .person{
-        margin: 0;
+        margin: .75em 0;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
+        margin-left: 1em;
     }
     .tag{
         font-size: 1rem;
         align-self: center;
+        margin-left: 1.5em;
+    }
+    .feed{
+        font-size: 1rem;
     }
 }
